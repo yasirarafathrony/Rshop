@@ -1,40 +1,23 @@
-import React, { useState } from 'react';
-
-import Jumbotron from 'react-bootstrap/Jumbotron';
-import Toast from 'react-bootstrap/Toast';
+import React from 'react';
 import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
-import './App.css';
-
-const ExampleToast = ({ children }) => {
-  const [show, toggleShow] = useState(true);
-
+const App = () => {
   return (
     <>
-      {!show && <Button onClick={() => toggleShow(true)}>Show Toast</Button>}
-      <Toast show={show} onClose={() => toggleShow(false)}>
-        <Toast.Header>
-          <strong className="mr-auto">React-Bootstrap</strong>
-        </Toast.Header>
-        <Toast.Body>{children}</Toast.Body>
-      </Toast>
+      <Header />
+        <main className='py-3'>
+          <Container>
+          <h1>Welcome</h1>
+          </Container>
+          
+        </main>
+
+      <Footer />
+      
     </>
-  );
-};
+  )
+}
 
-const App = () => (
-  <Container className="p-3">
-    <Jumbotron>
-      <h1 className="header">Welcome To React-Bootstrap</h1>
-      <ExampleToast>
-        We now have Toasts
-        <span role="img" aria-label="tada">
-          🎉
-        </span>
-      </ExampleToast>
-    </Jumbotron>
-  </Container>
-);
-
-export default App;
+export default App
